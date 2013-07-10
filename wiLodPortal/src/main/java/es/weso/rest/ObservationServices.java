@@ -25,7 +25,7 @@ import es.weso.wirouter.year.YearExpr;
  * @version 1.0
  */
 @Controller
-@RequestMapping("/observations")
+@RequestMapping("/observation")
 public class ObservationServices {
 
 	private static ObservationManagement observationManager;
@@ -34,14 +34,20 @@ public class ObservationServices {
 		ObservationServices.observationManager = observationManager;
 	}
 
-	@RequestMapping(value = "", method = RequestMethod.GET)
+	@RequestMapping(value = "s", method = RequestMethod.GET)
 	public String getObservations(ModelMap model) {
 		model.addAttribute("observations", new ItemCollection<Observation>(
 				observationManager.getAllObservations()));
 		return "observations";
 	}
 
-	@RequestMapping(value = "/{country}", method = RequestMethod.GET)
+	@RequestMapping(value = "/{uri}", method = RequestMethod.GET)
+	public String getObservationByUri(@PathVariable String uri, ModelMap model) {
+		model.addAttribute("observations", observationManager.getObservationByURI(uri));
+		return "observations";
+	}
+
+	@RequestMapping(value = "s/{country}", method = RequestMethod.GET)
 	public String getObservations(@PathVariable String country, ModelMap model) {
 		model.addAttribute(
 				"observations",
@@ -51,7 +57,7 @@ public class ObservationServices {
 		return "observations";
 	}
 
-	@RequestMapping(value = "/{country}/{year}", method = RequestMethod.GET)
+	@RequestMapping(value = "s/{country}/{year}", method = RequestMethod.GET)
 	public String getObservations(@PathVariable String country,
 			@PathVariable String year, ModelMap model) {
 		model.addAttribute(
@@ -62,7 +68,7 @@ public class ObservationServices {
 		return "observations";
 	}
 
-	@RequestMapping(value = "/{country}/{year}/{observation}", method = RequestMethod.GET)
+	@RequestMapping(value = "s/{country}/{year}/{observation}", method = RequestMethod.GET)
 	public String getObservations(@PathVariable String country,
 			@PathVariable String year, @PathVariable String observation,
 			ModelMap model) {

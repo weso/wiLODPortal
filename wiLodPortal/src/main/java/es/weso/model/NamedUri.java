@@ -1,5 +1,7 @@
 package es.weso.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * Pair name-uri to allow navigation
  * 
@@ -7,6 +9,7 @@ package es.weso.model;
  * @since 01/07/2013
  * @version 1.0
  */
+@XmlRootElement
 public class NamedUri {
 
 	private String name, uri;

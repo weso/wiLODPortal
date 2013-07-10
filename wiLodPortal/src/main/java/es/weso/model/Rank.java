@@ -1,5 +1,7 @@
 package es.weso.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * Representation of a rank for the web index project
  * 
@@ -7,6 +9,7 @@ package es.weso.model;
  * @since 01/07/2013
  * @version 1.0
  */
+@XmlRootElement
 public class Rank {
 
 	private int position, outOf;

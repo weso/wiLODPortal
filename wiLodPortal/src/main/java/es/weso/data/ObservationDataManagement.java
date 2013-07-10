@@ -32,4 +32,13 @@ public interface ObservationDataManagement {
 	public Collection<Observation> getObservationsFrom(
 			Collection<String> countries, Collection<String> observations,
 			Collection<Integer> years);
+
+	/**
+	 * Gets an {@link Observation} identified by a uri
+	 * 
+	 * @param uri
+	 *            The uri slice that identifies the {@link Observation}
+	 * @return The {@link Observation} that matches with the URI slice
+	 */
+	public Observation getObservationByURI(String uri);
 }

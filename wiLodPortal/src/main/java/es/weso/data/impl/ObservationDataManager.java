@@ -36,4 +36,9 @@ public class ObservationDataManager extends AbstractDataManager implements
 		return observations;
 	}
 
+	public Observation getObservationByURI(String uri) {
+		return querySolutionToObservation(client.executeQuery(
+				Conf.getQuery("observation", uri)).next());
+	}
+
 }

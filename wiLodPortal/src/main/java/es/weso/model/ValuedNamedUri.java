@@ -1,5 +1,7 @@
 package es.weso.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * Triple name-uri-value
  * 
@@ -7,6 +9,7 @@ package es.weso.model;
  * @since 04/07/2013
  * @version 1.0
  */
+@XmlRootElement
 public class ValuedNamedUri extends NamedUri {
 	private Double value;
 

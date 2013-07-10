@@ -2,6 +2,8 @@ package es.weso.model;
 
 import java.util.Collection;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * Representation of a country group for the web index project
  * 
@@ -9,6 +11,7 @@ import java.util.Collection;
  * @since 01/07/2013
  * @version 1.0
  */
+@XmlRootElement
 public class CountryGroup {
 
 	private String name, uri;

@@ -77,4 +77,8 @@ public class ObservationManager implements ObservationManagement {
 				Collections.<String> emptyList(), indicators, years);
 	}
 
+	public Observation getObservationByURI(String uri) {
+		return observationDataManager.getObservationByURI(uri);
+	}
+
 }
